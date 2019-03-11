@@ -1,0 +1,64 @@
+.PaddeHead {
+    width: 100%;
+    height:18vh;
+    float: left;
+    clear: both;
+    color: rgb(27, 36, 15);
+    background-color: rgb(65, 87, 35);
+}
+#headpicture {
+    width: 20%;
+    height:100%;
+    float: left;
+    background-image:url(pictures/turtle.png);
+}
+#headtext {
+    width: 70%;
+    height:99%;
+    padding-top:1%;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+}
+.PaddeMenu {
+    width: 20%;
+    height: 75vh;
+    float: left;
+    clear: both;
+    color: rgb(27, 36, 15);
+    background-color: rgb(65, 87, 35);
+}
+.menudiv {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.linktxt {
+    color: rgb(27, 36, 15);
+    text-decoration: none;
+    font-weight:bold;
+}
+.menudiv:hover {
+    background-color: rgb(82, 107, 46);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.PaddeContent {
+    width: 79%;
+    height: 73vh;
+    float: left;
+    padding-top:2vh;
+    padding-left:1%;
+    color: rgb(27, 36, 15);
+    background-color: rgb(109, 146, 58);
+}
+#footer {
+    float: left;
+    font-weight: bold;
+    width: 100%;
+    height:5vh;
+    padding-top:2vh;
+    text-align: center;
+    color: rgb(27, 36, 15);
+    background-color: rgb(65, 87, 35);
+}

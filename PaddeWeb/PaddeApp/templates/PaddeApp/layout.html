@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'PaddeStyles.css'%}" />
+</head>
+<body>
+    <div class="PaddeHead">
+      <div id="headpicture">
+      </div>
+      <div id="headtext">
+          <h1>Paddeweb </h1>
+      </div>
+    </div>
+    <div class="PaddeMenu">
+        <div class="menudiv">
+            <a class="linktxt" href="{% url 'home' %}">Home</a>
+        </div>
+         <div class="menudiv">
+            <a class="linktxt" href="{% url 'udbredelse' %}">Udbredelse</a>
+        </div>       
+        <div class="menudiv">
+            <a class="linktxt" href="{% url 'skjoldet' %}">Skjoldet</a>
+        </div>        
+        <div class="menudiv">
+            <a class="linktxt" href="{% url 'sanser' %}">Sanser</a>
+        </div>       
+        <div class="menudiv">
+            <a class="linktxt" href="{% url 'om' %}"> Om</a>
+        </div>
+    </div>
+    <div class="PaddeContent">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <div id="footer"> derp </div>
+</body>
+</html>

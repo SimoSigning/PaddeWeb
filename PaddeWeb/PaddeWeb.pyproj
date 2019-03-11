@@ -44,12 +44,20 @@
     <Compile Include="PaddeWeb\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PaddeApp\static\PaddeStyles.css" />
     <Content Include="PaddeApp\templates\PaddeApp\index.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\layout.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\om.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\Sanser.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\udbredelse.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PaddeApp\" />
     <Folder Include="PaddeApp\migrations\" />
+    <Folder Include="PaddeApp\static\" />
+    <Folder Include="PaddeApp\static\pictures\" />
     <Folder Include="PaddeApp\templates\" />
     <Folder Include="PaddeApp\templates\PaddeApp\" />
     <Folder Include="PaddeWeb\" />

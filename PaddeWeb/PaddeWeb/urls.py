@@ -12,6 +12,10 @@ import PaddeApp.views
 urlpatterns = [
     url(r'^$', PaddeApp.views.index, name='index'),
     url(r'^home$', PaddeApp.views.index, name='home'),
+    url(r'^udbredelse$', PaddeApp.views.udbredelse, name='udbredelse'),
+    url(r'^skjoldet$', PaddeApp.views.skjoldet, name='skjoldet'),
+    url(r'^sanser$', PaddeApp.views.sanser, name='sanser'),
+    url(r'^om$', PaddeApp.views.om, name='om'),
     # Examples:
     # url(r'^$', PaddeWeb.views.home, name='home'),
     # url(r'^PaddeWeb/', include('PaddeWeb.PaddeWeb.urls')),
