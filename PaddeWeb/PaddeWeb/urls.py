@@ -7,8 +7,8 @@ import PaddeApp.views
 from django.contrib.auth.views import login
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', PaddeApp.views.index, name='index'),
@@ -17,14 +17,14 @@ urlpatterns = [
     url(r'^skjoldet$', PaddeApp.views.skjoldet, name='skjoldet'),
     url(r'^sanser$', PaddeApp.views.sanser, name='sanser'),
     url(r'^om$', PaddeApp.views.om, name='om'),
-    url(r'^login$', login, {'template_name':'PaddeApp/login.html'})
+    url(r'^login/$', login, {'template_name':'PaddeApp/login.html'}),
     # Examples:
     # url(r'^$', PaddeWeb.views.home, name='home'),
     # url(r'^PaddeWeb/', include('PaddeWeb.PaddeWeb.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+     url(r'^admin/', include(admin.site.urls)),
 ]
