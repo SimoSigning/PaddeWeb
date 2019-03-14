@@ -1,0 +1,10 @@
+﻿{% extends "PaddeApp/layout.html" %}
+
+{%block content%}
+<p>Login here</p>
+<form  method="post">
+    {% csrf_token%}
+    {{ form.as_p }}
+    <button type="submit">login</button>
+</form>
+{%endblock%}

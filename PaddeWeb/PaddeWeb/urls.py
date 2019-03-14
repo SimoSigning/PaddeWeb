@@ -4,6 +4,7 @@ Definition of urls for PaddeWeb.
 
 from django.conf.urls import include, url
 import PaddeApp.views
+from django.contrib.auth.views import login
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -16,6 +17,7 @@ urlpatterns = [
     url(r'^skjoldet$', PaddeApp.views.skjoldet, name='skjoldet'),
     url(r'^sanser$', PaddeApp.views.sanser, name='sanser'),
     url(r'^om$', PaddeApp.views.om, name='om'),
+    url(r'^login$', login, {'template_name':'PaddeApp/login.html'})
     # Examples:
     # url(r'^$', PaddeWeb.views.home, name='home'),
     # url(r'^PaddeWeb/', include('PaddeWeb.PaddeWeb.urls')),
