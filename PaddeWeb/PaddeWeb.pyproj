@@ -49,6 +49,7 @@
     <Content Include="PaddeApp\templates\PaddeApp\index.html" />
     <Content Include="PaddeApp\templates\PaddeApp\layout.html" />
     <Content Include="PaddeApp\templates\PaddeApp\login.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\logout.html" />
     <Content Include="PaddeApp\templates\PaddeApp\om.html" />
     <Content Include="PaddeApp\templates\PaddeApp\Sanser.html" />
     <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />

@@ -14,7 +14,7 @@ def index(request):
 def udbredelse(request):
     now = datetime.now
     content = "Med undtagelse af de polare regioner bebor skildpadder alle kontinenter. De forekommer i mange forskellige slags omgivelser, i tropiske skove og sumpe, ørkener og halvørkener, søer, damme, floder, brakvandsområder og oceaner, i tempererede, tropiske og subtropiske klimaer."
-    args = {
+    args = { 
     'mycontent' : content
      }
 
