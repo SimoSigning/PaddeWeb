@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime
+from django.contrib.auth.forms import UserCreationForm
+from PaddeApp.forms import RegistrationForm
+from django.contrib.auth.models import User
 
 def index(request):
     now = datetime.now
@@ -54,3 +57,19 @@ def login(request):
     }
 
     return render(request, "PaddeApp/login.html",args)
+
+def register(request):
+    if request.method =='POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/login')
+    else:
+        form = RegistrationForm()
+
+        args = {'form': form}
+        return render(request, "PaddeApp/register.html", args)
+
+def profil(request):
+    args = {'user': request.user}
+    return render(request, 'PaddeApp/profil.html', args)

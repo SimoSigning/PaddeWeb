@@ -34,6 +34,9 @@
     <Compile Include="manage.py" />
     <Compile Include="PaddeApp\admin.py" />
     <Compile Include="PaddeApp\apps.py" />
+    <Compile Include="PaddeApp\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PaddeApp\migrations\__init__.py" />
     <Compile Include="PaddeApp\models.py" />
     <Compile Include="PaddeApp\tests.py" />
@@ -51,6 +54,8 @@
     <Content Include="PaddeApp\templates\PaddeApp\login.html" />
     <Content Include="PaddeApp\templates\PaddeApp\logout.html" />
     <Content Include="PaddeApp\templates\PaddeApp\om.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\profil.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\register.html" />
     <Content Include="PaddeApp\templates\PaddeApp\Sanser.html" />
     <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />
     <Content Include="PaddeApp\templates\PaddeApp\udbredelse.html" />
