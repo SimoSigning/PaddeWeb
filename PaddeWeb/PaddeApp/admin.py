@@ -1,5 +1,5 @@
 from django.contrib import admin
-from PaddeApp.models import UserProfile
+from PaddeApp.models import FavoriteTurtle
 
 # Register your models here.
-admin.site.register(UserProfile)
+admin.site.register(FavoriteTurtle)

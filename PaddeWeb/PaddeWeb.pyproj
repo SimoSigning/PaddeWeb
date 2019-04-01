@@ -49,16 +49,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PaddeApp\static\PaddeStyles.css" />
+    <Content Include="PaddeApp\templates\PaddeApp\create_favoriteturtle.html" />
     <Content Include="PaddeApp\templates\PaddeApp\index.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\invalid_login.html" />
     <Content Include="PaddeApp\templates\PaddeApp\layout.html" />
     <Content Include="PaddeApp\templates\PaddeApp\login.html" />
     <Content Include="PaddeApp\templates\PaddeApp\logout.html" />
     <Content Include="PaddeApp\templates\PaddeApp\om.html" />
     <Content Include="PaddeApp\templates\PaddeApp\profil.html" />
     <Content Include="PaddeApp\templates\PaddeApp\register.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\register_success.html" />
     <Content Include="PaddeApp\templates\PaddeApp\Sanser.html" />
     <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />
     <Content Include="PaddeApp\templates\PaddeApp\udbredelse.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\loggedin.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

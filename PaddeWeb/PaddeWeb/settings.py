@@ -123,6 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/sanser'
+LOGIN_REDIRECT_URL = '/profil'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
