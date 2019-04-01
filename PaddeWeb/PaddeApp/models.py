@@ -4,23 +4,15 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    favorite_turtle_name = models.CharField(max_length=50)
+
+User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+
 class FavoriteTurtle(models.Model):
     title = models.CharField(max_length=200)
     turtleinfo = models.TextField()
 
     def __unicode__(self):
         return self.title
-
-#class UserProfile(models.Model):
-#    user = models.OneToOneField(User)
-#    description = models.CharField(max_length=100, default='')
-#    city = models.CharField(max_length = 50, default='')
-#    website = models.URLField(default='')
-#    phone = models.IntegerField(default=0)
-#    skildpadde = models.IntegerField(default=0)
-
-#def create_profile(sender, **kwargs):
-#    if kwargs['created']:
-#        user_profile = UserProfile.objects.create(user=kwargs['instance'])
-
-#post_save.connect(create_profile, sender=User)

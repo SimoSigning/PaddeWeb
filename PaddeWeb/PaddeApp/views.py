@@ -5,7 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.template.context_processors import csrf
-from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm
+from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm, UserProfileForm
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -107,26 +108,19 @@ def create_fav_turtle(request):
     args.update(csrf(request))
     args['form'] = form
     return render_to_response('PaddeApp/create_favoriteturtle.html', args)
-#def login(request):
-#    content = "derp"
-#    args = {
-#    'mycontent' : content        
-#    }
 
- #   return render(request, "PaddeApp/login.html",args)
-
-#def register(request):
-#    if request.method =='POST':
-#        form = RegistrationForm(request.POST)
-#        if form.is_valid():
-#            form.save()
-#            return redirect('/login')
-#    else:
-#        form = RegistrationForm()
-#
-#        args = {'form': form}
-#        return render(request, "PaddeApp/register.html", args)
-
+@login_required
 def profil(request):
-    args = {'user': request.user}
-    return render(request, 'PaddeApp/profil.html', args)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/loggedin')
+    else:
+        user = request.user
+        profile = user.profile
+        form = UserProfileForm(instance=profile)
+    args = {}
+    args.update(csrf(request))
+    args['form'] = form
+    return render_to_response('PaddeApp/profil.html', args)
