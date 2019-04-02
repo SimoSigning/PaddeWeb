@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.template.context_processors import csrf
-from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm, UserProfileForm
+from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm, UserProfileForm, EditProfileForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -15,7 +15,6 @@ def index(request):
     args = {
     'mycontent' : content   
      }
-
     return render(request,"PaddeApp/index.html",args)
 
 def udbredelse(request):
@@ -24,7 +23,6 @@ def udbredelse(request):
     args = { 
     'mycontent' : content
      }
-
     return render(request, "PaddeApp/udbredelse.html", args)
       
 def skjoldet(request):
@@ -33,7 +31,6 @@ def skjoldet(request):
     args = {
     'mycontent' : content
     }
-
     return render(request, "PaddeApp/skjoldet.html", args) 
 
 def sanser(request):
@@ -42,7 +39,6 @@ def sanser(request):
     args = {
     'mycontent' : content
     }
-
     return render(request,"PaddeApp/sanser.html", args)
 
 def om(request):
@@ -51,7 +47,6 @@ def om(request):
     args = {
     'mycontent' : content
     }
-
     return render(request,"PaddeApp/om.html",args)
 
 def login(request):
@@ -81,7 +76,7 @@ def logout(request):
     auth.logout(request)
     return render_to_response('PaddeApp/logout.html')
 
-def register_user(request):
+def register_user(request): 
     if request.method == 'POST':
         form = MyRegistrationForm(request.POST)
         if form.is_valid():
@@ -112,15 +107,27 @@ def create_fav_turtle(request):
 @login_required
 def profil(request):
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=request.user.profile)
-        if form.is_valid():
-            form.save()
+        form01 = UserProfileForm(request.POST, instance=request.user.profile)
+        form02 = EditProfileForm(request.POST, instance=request.user)
+        if form01.is_valid() and form02.is_valid():
+            form01.save()
+            form02.save()
             return HttpResponseRedirect('/loggedin')
     else:
         user = request.user
         profile = user.profile
-        form = UserProfileForm(instance=profile)
+        form01 = UserProfileForm(instance=profile)
+        form02 = EditProfileForm(instance=request.user)
     args = {}
     args.update(csrf(request))
-    args['form'] = form
+    args['form01'] = form01
+    args['form02'] = form02
     return render_to_response('PaddeApp/profil.html', args)
+
+def view_profile(request):
+    user = request.user
+    profile = user.profile
+    args = {}
+    args['derp01'] = user
+    args['derp02'] = profile
+    return render_to_response('PaddeApp/view_profile.html', args)

@@ -63,6 +63,7 @@
     <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />
     <Content Include="PaddeApp\templates\PaddeApp\udbredelse.html" />
     <Content Include="PaddeApp\templates\PaddeApp\loggedin.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\view_profile.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

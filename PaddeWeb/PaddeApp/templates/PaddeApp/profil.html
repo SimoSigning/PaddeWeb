@@ -8,8 +8,8 @@
   {% endfor %}
   
   <form action="/profil/" method="post">{% csrf_token %}
-  {{form.as_ul}}
-  
+  {{form01.as_ul}}
+  {{form02.as_ul}}
   <input type="submit" value="Update" />
     
   </form>
