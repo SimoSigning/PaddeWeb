@@ -1,7 +1,13 @@
 from django import forms
-from PaddeApp.models import FavoriteTurtle, UserProfile
+from PaddeApp.models import FavoriteTurtle, UserProfile, TurtleForum
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
+class turtleForum(forms.ModelForm):
+
+    class Meta:
+        model = TurtleForum
+        fields = ('title', 'content', 'date')
 
 class EditProfileForm(UserChangeForm):
     

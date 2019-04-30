@@ -61,6 +61,7 @@
     <Content Include="PaddeApp\templates\PaddeApp\register_success.html" />
     <Content Include="PaddeApp\templates\PaddeApp\Sanser.html" />
     <Content Include="PaddeApp\templates\PaddeApp\skjoldet.html" />
+    <Content Include="PaddeApp\templates\PaddeApp\turtle_forum.html" />
     <Content Include="PaddeApp\templates\PaddeApp\udbredelse.html" />
     <Content Include="PaddeApp\templates\PaddeApp\loggedin.html" />
     <Content Include="PaddeApp\templates\PaddeApp\view_profile.html" />

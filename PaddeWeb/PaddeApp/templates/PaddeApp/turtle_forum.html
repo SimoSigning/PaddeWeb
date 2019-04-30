@@ -1,0 +1,20 @@
+﻿{% extends "PaddeApp/layout.html" %}
+
+{%block content%}
+<form action="/turtle_forum/" method="post">{% csrf_token %}
+    {{form}}
+    <input type="submit" value="Derp"/>
+</form>
+
+
+<table>
+{% for derp in kage %}
+<tr>
+<td>{{ derp.title }}</td>
+<td>{{ derp.content }}</td>
+<td>{{ derp.date }}</td>
+</tr>
+{% endfor %}
+</table>
+{{mycontent}}
+{%endblock%}

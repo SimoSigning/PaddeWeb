@@ -17,3 +17,8 @@ class FavoriteTurtle(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class TurtleForum(models.Model):
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    date = models.DateField()

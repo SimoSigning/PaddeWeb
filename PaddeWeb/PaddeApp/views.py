@@ -5,8 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.template.context_processors import csrf
-from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm, UserProfileForm, EditProfileForm
+from PaddeApp.forms import MyRegistrationForm, FavoriteTurtleForm, UserProfileForm, EditProfileForm, turtleForum
 from django.contrib.auth.decorators import login_required
+from PaddeApp.models import TurtleForum
 
 
 def index(request):
@@ -131,3 +132,17 @@ def view_profile(request):
     args['derp01'] = user
     args['derp02'] = profile
     return render_to_response('PaddeApp/view_profile.html', args)
+
+def turtle_forum(request):
+    if request.method == 'POST':
+        form = turtleForum(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/turtle_forum')
+    else:
+        form = turtleForum()
+    args = {}
+    args.update(csrf(request))
+    args['form'] = form
+    args['kage'] = TurtleForum.objects.all()
+    return render_to_response('PaddeApp/turtle_forum.html', args)

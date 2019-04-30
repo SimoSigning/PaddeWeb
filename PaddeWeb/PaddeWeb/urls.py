@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^register/$', PaddeApp.views.register_user, name ='register'),
     url(r'^register_success/$', PaddeApp.views.register_success, name='register_success'),
     url(r'^create_fav_turtle/$', PaddeApp.views.create_fav_turtle, name='create_fav_turtle'),
+    url(r'^turtle_forum/$', PaddeApp.views.turtle_forum, name='turtle_forum'),
     # Examples:
     # url(r'^$', PaddeWeb.views.home, name='home'),
 
